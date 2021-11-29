@@ -1,5 +1,8 @@
 package com.example.mycontact.ui.home
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +11,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.mycontact.MainActivity
 import com.example.mycontact.R
+import com.example.mycontact.SecondActivity
 import com.example.mycontact.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -35,6 +40,16 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        binding.buttonSecond.setOnClickListener{
+            val intent = Intent(context, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        val profilePreference : SharedPreferences = activity?.getPreferences(Context.MODE_PRIVATE)!!
+        val name : String? = profilePreference.getString(MainActivity.NAME, "")
+        binding.textViewWelcome.text = String.format("%s %s", getString(R.string.welcome), name)
+
         return root
     }
 

@@ -7,16 +7,18 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="action_settings">Settings</string>
-    <string name="save">Save</string>
+    <string name="save" translatable="false">Save</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home" translatable="false">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_profile">Profile</string>
 
-    <string name="name">Name</string>
+    <string name="name" translatable="false">Name</string>
     <string name="phone">Phone</string>
     <string name="error_value_required">Value required</string>
+    <string name="record_saved">Record saved</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome</string>
 </resources>
